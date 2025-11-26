@@ -236,8 +236,9 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const ctaButton = document.querySelector('.cta-button');
     if (ctaButton) {
-        ctaButton.addEventListener('click', () => {
-            alert('Téléchargement du CV en cours...\n\nCV de Yassine Belkacem - Expert en Cybersécurité');
+        ctaButton.addEventListener('click', (e) => {
+            // Le téléchargement se fait automatiquement via l'attribut download
+            console.log('Téléchargement du CV REDSUP en cours...');
         });
     }
 });
