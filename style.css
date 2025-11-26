@@ -14,6 +14,8 @@
     --success: #00ccff;
     --warning: #0099ff;
     --danger: #ff1744;
+    --shadow: 0 8px 32px rgba(0, 153, 255, 0.1);
+    --shadow-hover: 0 12px 48px rgba(0, 153, 255, 0.2);
 }
 
 /* ============= Reset & Base ============= */
@@ -25,18 +27,15 @@
 
 html {
     scroll-behavior: smooth;
-    overflow: hidden;
 }
 
 body {
-    font-family: 'Courier New', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Courier New', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
-    overflow-y: hidden;
-    height: 100vh;
-    width: 100vw;
+    overflow-y: auto;
 }
 
 /* ============= Navbar ============= */
@@ -126,10 +125,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 70px 40px 40px;
+    padding: 70px 20px 40px;
     margin-top: 0;
-    overflow: hidden;
+    overflow: auto;
     width: 100%;
+}
+
+main {
+    min-height: calc(100vh - 60px);
+    overflow-y: auto;
 }
 
 .hero::before {
@@ -147,13 +151,15 @@ body {
 
 .hero-wrapper {
     display: flex;
-    gap: 80px;
+    gap: 60px;
     max-width: 1400px;
     width: 100%;
     align-items: center;
     margin: 0 auto;
     z-index: 10;
     position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .matrix-bg {
@@ -173,7 +179,8 @@ body {
 .hero-left {
     position: relative;
     z-index: 10;
-    flex: 0 1 50%;
+    flex: 0 1 100%;
+    max-width: 550px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -396,7 +403,8 @@ body {
 .hero-right {
     position: relative;
     z-index: 10;
-    flex: 0 1 50%;
+    flex: 0 1 100%;
+    max-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -408,10 +416,11 @@ body {
     width: 100%;
     background: rgba(10, 14, 39, 0.95);
     border: 2px solid var(--secondary);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 0 40px rgba(0, 153, 255, 0.4);
+    box-shadow: var(--shadow);
     backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
 .terminal-header {
@@ -573,6 +582,7 @@ body {
 .about {
     padding: 100px 0;
     background: linear-gradient(180deg, transparent, rgba(0, 255, 0, 0.05) 50%, transparent);
+    min-height: auto;
 }
 
 .about-content {
@@ -664,6 +674,7 @@ body {
 .skills {
     padding: 100px 0;
     background: linear-gradient(180deg, transparent, rgba(0, 153, 255, 0.05) 50%, transparent);
+    min-height: auto;
 }
 
 .skills-grid {
@@ -676,10 +687,11 @@ body {
     padding: 30px;
     background: rgba(15, 20, 25, 0.6);
     border: 2px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 12px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(5px);
 }
 
 .skill-card::before {
@@ -699,8 +711,9 @@ body {
 
 .skill-card:hover {
     border-color: var(--primary);
-    box-shadow: 0 0 25px rgba(0, 255, 0, 0.2);
-    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-8px);
+    background: rgba(15, 20, 25, 0.8);
 }
 
 .skill-icon {
@@ -744,6 +757,7 @@ body {
 .projects {
     padding: 100px 0;
     background: linear-gradient(180deg, transparent, rgba(255, 0, 128, 0.05) 50%, transparent);
+    min-height: auto;
 }
 
 /* ============= Filter Section ============= */
@@ -790,7 +804,7 @@ body {
 .project-card {
     background: rgba(15, 20, 25, 0.6);
     border: 2px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
     display: flex;
@@ -798,6 +812,7 @@ body {
     opacity: 1;
     transform: scale(1);
     max-height: none;
+    backdrop-filter: blur(5px);
 }
 
 .project-card.hidden {
@@ -809,8 +824,9 @@ body {
 
 .project-card:hover {
     border-color: var(--primary);
-    box-shadow: 0 0 30px rgba(0, 153, 255, 0.3);
-    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-12px);
+    background: rgba(15, 20, 25, 0.9);
 }
 
 .project-image {
@@ -916,6 +932,7 @@ body {
 .certifications {
     padding: 100px 0;
     background: linear-gradient(180deg, transparent, rgba(0, 255, 136, 0.05) 50%, transparent);
+    min-height: auto;
 }
 
 .certifications-grid {
@@ -928,15 +945,16 @@ body {
     padding: 40px 30px;
     background: rgba(15, 20, 25, 0.6);
     border: 2px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
     transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
 .cert-card:hover {
     border-color: var(--success);
     background: rgba(0, 255, 136, 0.05);
-    box-shadow: 0 0 25px rgba(0, 255, 136, 0.2);
+    box-shadow: var(--shadow-hover);
     transform: translateY(-10px);
 }
 
@@ -973,6 +991,7 @@ body {
 .contact {
     padding: 100px 0;
     background: linear-gradient(180deg, transparent, rgba(0, 255, 0, 0.1) 50%, transparent);
+    min-height: auto;
 }
 
 .contact-intro {
@@ -995,17 +1014,19 @@ body {
     padding: 25px;
     background: rgba(15, 20, 25, 0.6);
     border: 2px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 12px;
     text-decoration: none;
     color: var(--text-primary);
     transition: all 0.3s ease;
     overflow: hidden;
+    backdrop-filter: blur(5px);
 }
 
 .contact-method:hover {
     border-color: var(--primary);
-    box-shadow: 0 0 25px rgba(0, 99, 255, 0.2);
-    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-8px);
+    background: rgba(15, 20, 25, 0.8);
 }
 
 .contact-method i {
@@ -1061,68 +1082,90 @@ body {
 }
 
 /* ============= Responsive Design ============= */
+@media (max-width: 1024px) {
+    .hero-wrapper {
+        gap: 40px;
+    }
+
+    .hero-left,
+    .hero-right {
+        flex: 0 1 100%;
+        max-width: 100%;
+    }
+
+    .glitch {
+        font-size: clamp(36px, 6vw, 64px);
+    }
+
+    .hero-subtitle {
+        font-size: 22px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
-    .nav-menu {
-        display: none;
+    .navbar {
+        height: 60px;
+    }
+
+    .nav-container {
+        height: 60px;
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+        gap: 5px;
+    }
+
+    .logo i {
+        font-size: 18px;
     }
 
     .hamburger {
         display: flex;
     }
 
-    .about-content,
-    .contact-content {
-        grid-template-columns: 1fr;
+    .hero {
+        padding: 60px 15px 40px;
     }
 
-    .achievements,
-    .about-stats {
-        grid-template-columns: 1fr;
+    .hero-wrapper {
+        gap: 30px;
+        padding: 20px 0;
     }
 
-    .terminal-window {
-        position: static;
-        margin-top: 40px;
-        width: 100%;
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .section-title {
-        font-size: 36px;
+    .hero-left,
+    .hero-right {
+        flex: 0 1 100%;
     }
 
     .glitch {
-        font-size: 48px;
+        font-size: clamp(32px, 7vw, 48px);
     }
 
     .hero-subtitle {
         font-size: 18px;
     }
 
-    .hero {
-        flex-direction: column;
-        gap: 40px;
-        padding: 70px 20px 40px;
+    .hero-description {
+        font-size: 14px;
     }
 
-    .hero-wrapper {
-        flex-direction: column;
-        gap: 40px;
-        width: 100%;
+    .security-highlights {
+        gap: 8px;
     }
 
-    .hero-left {
-        order: 1;
-        flex: 1;
-        width: 100%;
-    }
-
-    .hero-right {
-        order: 2;
-        flex: 1;
-        width: 100%;
+    .security-tag {
+        padding: 6px 10px;
+        font-size: 11px;
     }
 
     .hero-buttons {
@@ -1132,18 +1175,20 @@ body {
     .cta-button,
     .secondary-button {
         width: 100%;
-        text-align: center;
+        padding: 14px 30px;
+        font-size: 14px;
     }
 
     .hero-stats {
         flex-direction: column;
-        gap: 20px;
+        gap: 15px;
     }
 
     .stat-item {
         flex-direction: row;
         align-items: center;
-        gap: 12px;
+        gap: 10px;
+        padding: 0;
     }
 
     .stat-value {
@@ -1151,72 +1196,291 @@ body {
     }
 
     .stat-label {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .tech-icons {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .terminal-window {
-        margin-top: 0;
-        width: 100%;
-    }
-
-    .skills-grid,
-    .projects-grid,
-    .certifications-grid,
-    .contact-methods {
-        grid-template-columns: 1fr;
-    }
-
-    .filter-section {
         gap: 10px;
     }
 
+    .tech-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .achievements,
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement {
+        padding: 15px;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: 20px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        height: 150px;
+        font-size: 48px;
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+
+    .project-info h3 {
+        font-size: 18px;
+    }
+
+    .project-info p {
+        font-size: 13px;
+    }
+
+    .filter-section {
+        gap: 8px;
+    }
+
     .filter-btn {
-        padding: 10px 18px;
+        padding: 10px 16px;
         font-size: 12px;
     }
 
     .pagination {
-        gap: 10px;
+        gap: 8px;
     }
 
     .pagination-btn {
         padding: 10px 15px;
-        font-size: 14px;
+        font-size: 13px;
+        min-width: 45px;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-card {
+        padding: 30px 20px;
+    }
+
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-method {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .contact-method i {
+        font-size: 32px;
+    }
+
+    .footer {
+        padding: 30px 0;
     }
 
     .footer-links {
         flex-direction: column;
         gap: 10px;
+        font-size: 12px;
+    }
+
+    section {
+        padding-top: 60px;
     }
 }
 
 @media (max-width: 480px) {
+    .navbar {
+        height: 55px;
+    }
+
     .nav-container {
+        height: 55px;
         padding: 0 10px;
     }
 
-    .nav-menu {
+    .logo {
+        font-size: 16px;
+    }
+
+    .hero {
+        padding: 55px 10px 30px;
+    }
+
+    .hero-wrapper {
         gap: 20px;
     }
 
     .glitch {
-        font-size: 36px;
+        font-size: clamp(28px, 8vw, 42px);
     }
 
     .hero-subtitle {
         font-size: 16px;
     }
 
+    .hero-description {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .security-highlights {
+        gap: 6px;
+        margin-bottom: 15px;
+    }
+
+    .security-tag {
+        padding: 5px 8px;
+        font-size: 10px;
+    }
+
+    .hero-buttons {
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .cta-button,
+    .secondary-button {
+        padding: 12px 25px;
+        font-size: 13px;
+    }
+
+    .hero-stats {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .stat-value {
+        font-size: 20px;
+    }
+
     .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .section-title::after {
+        width: 150px;
+    }
+
+    .container {
+        padding: 0 12px;
+    }
+
+    .skill-card,
+    .project-card,
+    .cert-card {
+        padding: 15px;
+    }
+
+    .skill-icon {
+        font-size: 36px;
+    }
+
+    .skill-card h3 {
+        font-size: 16px;
+    }
+
+    .skill-card p {
+        font-size: 12px;
+    }
+
+    .project-image {
+        height: 120px;
+        font-size: 36px;
+    }
+
+    .project-info {
+        padding: 15px;
+    }
+
+    .project-info h3 {
+        font-size: 16px;
+    }
+
+    .project-info p {
+        font-size: 12px;
+    }
+
+    .filter-btn {
+        padding: 8px 12px;
+        font-size: 11px;
+    }
+
+    .pagination-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+        min-width: 40px;
+    }
+
+    .cert-card {
+        padding: 20px 15px;
+    }
+
+    .cert-icon {
+        font-size: 36px;
+    }
+
+    .cert-card h3 {
+        font-size: 16px;
+    }
+
+    .contact-method {
+        padding: 15px;
+    }
+
+    .contact-method i {
         font-size: 28px;
     }
 
-    .cta-button {
-        padding: 12px 30px;
+    .contact-method h3 {
         font-size: 14px;
+    }
+
+    .contact-method p {
+        font-size: 12px;
+    }
+
+    .footer {
+        padding: 20px 0;
+        font-size: 11px;
+    }
+
+    section {
+        padding-top: 55px;
     }
 }

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets - Yassine Belkacem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-shield-alt"></i>
+                <span>YB Security</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="about.html" class="nav-link">À propos</a></li>
+                <li><a href="skills.html" class="nav-link">Compétences</a></li>
+                <li><a href="projects.html" class="nav-link active">Projets</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <main class="projects">
+        <div class="container">
+            <h1 class="section-title">Projets Récents</h1>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">Tous les projets</button>
+                <button class="filter-btn" data-filter="pentest">Pentest</button>
+                <button class="filter-btn" data-filter="malware">Malware</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="ctf">CTF</button>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-category="pentest">
+                    <div class="project-image" style="background: linear-gradient(135deg, #ff0080, #ff8c00);">
+                        <i class="fas fa-lock-open"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Pentest d'infrastructure d'entreprise</h3>
+                        <p>Audit de sécurité complet d'une PME. Découverte de vulnérabilités critiques, génération de rapport avec remédiation.</p>
+                        <div class="project-tags">
+                            <span class="tag">Pentest</span>
+                            <span class="tag">Network</span>
+                            <span class="tag">Compliance</span>
+                        </div>
+                        <a href="#" class="project-link">En savoir plus →</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="malware">
+                    <div class="project-image" style="background: linear-gradient(135deg, #00d4ff, #0099ff);">
+                        <i class="fas fa-virus"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Analyse de malware avancée</h3>
+                        <p>Analyse dynamique d'un trojan bancaire. Extraction de IOCs, identification du C&C, création de signatures YARA.</p>
+                        <div class="project-tags">
+                            <span class="tag">Malware Analysis</span>
+                            <span class="tag">RE</span>
+                            <span class="tag">IOCs</span>
+                        </div>
+                        <a href="#" class="project-link">En savoir plus →</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="python">
+                    <div class="project-image" style="background: linear-gradient(135deg, #00ff88, #00cc66);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Système de détection d'intrusion</h3>
+                        <p>Développement d'un IDS custom en Python avec machine learning pour détecter les anomalies réseau.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">ML</span>
+                            <span class="tag">IDS</span>
+                        </div>
+                        <a href="#" class="project-link">En savoir plus →</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="ctf">
+                    <div class="project-image" style="background: linear-gradient(135deg, #ff1744, #ff5252);">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Capture The Flag - HackTheBox</h3>
+                        <p>Résolution de 25+ défis de sécurité. Classé dans le top 5% de la plateforme.</p>
+                        <div class="project-tags">
+                            <span class="tag">CTF</span>
+                            <span class="tag">Challenges</span>
+                            <span class="tag">Exploit</span>
+                        </div>
+                        <a href="#" class="project-link">En savoir plus →</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="python">
+                    <div class="project-image" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Framework de Pentest en Python</h3>
+                        <p>Création d'un framework automatisé pour scans de vulnérabilités et exploitation.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Framework</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                        <a href="#" class="project-link">En savoir plus →</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="pentest">
+                    <div class="project-image" style="background: linear-gradient(135deg, #00bfff, #1e90ff);">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Lab de sécurité - Homelab</h3>
+                        <p>Construction d'un environnement de test isolé avec Proxmox, Active Directory et outils de monitoring.</p>
+                        <div class="project-tags">
+                            <span class="tag">Homelab</span>
+                            <span class="tag">Virtualization</span>
+                            <span class="tag">AD</span>
+                        </div>
+                        <a href="#" class="project-link">En savoir plus →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn active" data-page="1">1</button>
+                <button class="pagination-btn" data-page="2">2</button>
+                <button class="pagination-btn" data-page="3">3</button>
+            </div>
+
+            <!-- Certifications Section -->
+            <h2 class="section-title" style="margin-top: 100px;">Certifications & Formations</h2>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>CompTIA Security+</h3>
+                    <p>Certification fondamentale en cybersécurité</p>
+                    <span class="cert-date">2023</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>CEH (Certified Ethical Hacker)</h3>
+                    <p>Certification en ethical hacking</p>
+                    <span class="cert-date">2023</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Master Cybersécurité</h3>
+                    <p>Formation universitaire avancée en cours</p>
+                    <span class="cert-date">2024-2025</span>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>GIAC Security Essentials</h3>
+                    <p>Formation SANS en cours de préparation</p>
+                    <span class="cert-date">2025</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Yassine Belkacem. Tous droits réservés.</p>
+            <div class="footer-links">
+                <span class="footer-link">Mentions légales</span>
+                <span class="footer-link">Politique de confidentialité</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
