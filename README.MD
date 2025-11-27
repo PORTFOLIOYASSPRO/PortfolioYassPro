@@ -1,4 +1,4 @@
-# Portfolio Yassine Belkacem - Expert en Cybersécurité
+# Portfolio Yassine WAAMAR - Apprenti Cybersécurité
 
 Portfolio professionnel moderne et responsive avec architecture multi-pages.
 
@@ -110,10 +110,10 @@ git push -u origin main
 
 ## 📝 Licence
 
-© 2024 Yassine Belkacem. Tous droits réservés.
+© 2024 Yassine WAAMAR. Tous droits réservés.
 
 ## 📧 Contact
 
 - Email : yassine.belkacem@email.com
-- LinkedIn : [Yassine Belkacem](https://linkedin.com)
+- LinkedIn : [Yassine WAAMAR](https://linkedin.com)
 - GitHub : [yassinebelkacem](https://github.com)

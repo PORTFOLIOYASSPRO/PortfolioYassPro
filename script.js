@@ -268,6 +268,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-console.log('🛡️  Portfolio de Yassine Belkacem chargé avec succès');
+console.log('🛡️  Portfolio de Yassine WAAMAR chargé avec succès');
 console.log('💻 Apprenti Cybersécurité | BTS SIO SISR | Gouvernance Cyber');
 console.log('🌐 Architecture multi-pages responsive et moderne');
