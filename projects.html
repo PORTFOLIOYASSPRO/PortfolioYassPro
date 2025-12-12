@@ -39,9 +39,9 @@
             <!-- Filter Buttons -->
             <div class="filter-section">
                 <button class="filter-btn active" data-filter="all">Tous les projets</button>
-                <button class="filter-btn" data-filter="pentest">Pentest</button>
-                <button class="filter-btn" data-filter="malware">Malware</button>
-                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="pentest">Réseaux</button>
+                <button class="filter-btn" data-filter="malware">Sécurité</button>
+                <button class="filter-btn" data-filter="python">Cloud</button>
                 <button class="filter-btn" data-filter="ctf">CTF</button>
             </div>
 
@@ -51,27 +51,29 @@
                         <i class="fas fa-network-wired"></i>
                     </div>
                     <div class="project-info">
-                        <h3>Technicien Informatique - Cyber Phone Mobile Galaxy</h3>
-                        <p>Réparation de smartphones et ordinateurs. Formatages, maintenance informatique et soudure de pièces. Vente de produits High Tech avec contact direct avec les clients.</p>
+                        <h3>Routage dynamique RIPv2 entre sites</h3>
+                        <p>Mise en place du protocole de routage dynamique RIPv2 pour connecter plusieurs réseaux et permettre la communication entre un site client et un serveur central. Vérification de la table de routage et des pings de bout en bout.</p>
                         <div class="project-tags">
-                            <span class="tag">Alternance</span>
-                            <span class="tag">Maintenance IT</span>
-                            <span class="tag">Hardware</span>
+                            <span class="tag">Routage dynamique</span>
+                            <span class="tag">RIPv2</span>
+                            <span class="tag">Cisco</span>
                         </div>
+                        
                     </div>
                 </div>
+                
 
                 <div class="project-card" data-category="malware">
-                    <div class="project-image" style="background: linear-gradient(135deg, #00d4ff, #0099ff);">
-                        <i class="fas fa-server"></i>
+                    <div class="project-image" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">
+                        <i class="fas fa-lock-open"></i>
                     </div>
                     <div class="project-info">
-                        <h3>Agent de Sécurité - Événements Sportifs</h3>
-                        <p>Agent de sécurité polyvalent pour des événements sportifs et cérémonies (depuis JUIL 2024). Assurance de la sécurité des personnes, gestion des accès, prévention et surveillance des zones sensibles.</p>
+                        <h3>Sécurisation de niveau 2 sur le LAN</h3>
+                        <p>Mise en œuvre de mécanismes de sécurité de niveau 2 sur switches et routeurs : séparation des VLANs Utilisateurs / IT / Gestion, sécurisation des accès administratifs, filtrage et bonnes pratiques pour limiter les attaques locales.</p>
                         <div class="project-tags">
-                            <span class="tag">Sécurité</span>
-                            <span class="tag">Événementiel</span>
-                            <span class="tag">Responsabilité</span>
+                            <span class="tag">Sécurité L2</span>
+                            <span class="tag">VLAN</span>
+                            <span class="tag">Accès admin</span>
                         </div>
                     </div>
                 </div>
@@ -81,12 +83,13 @@
                         <i class="fas fa-building"></i>
                     </div>
                     <div class="project-info">
-                        <h3>Formation Active Directory & GPO</h3>
-                        <p>Certification et maîtrise d'Active Directory via formation BTS SIO SISR. Gestion des utilisateurs et ordinateurs, déploiement de Group Policy Objects (GPO), sécurisation de l'infrastructure réseau. Application directe en environnement d'alternance avec mise en place de contrôles d'accès.</p>
+                        <h3>Lab 3-tiers WEB / APP / DB – Architecture type Cloud</h3>
+                        <p>Maquette d’une architecture 3-tiers inspirée du cloud azure : 4 VM Windows Server sous VirtualBox avec segments réseau WEB / APP / DB séparés.
+                            Mise en place d’un routeur multi-cartes, routage entre les sous-réseaux et serveur web IIS accessible uniquement via la couche WEB.</p>
                         <div class="project-tags">
-                            <span class="tag">Active Directory</span>
-                            <span class="tag">Group Policy</span>
-                            <span class="tag">BTS SISR</span>
+                            <span class="tag">Réseau</span>
+                            <span class="tag">Cloud</span>
+                            <span class="tag">Windows Server</span>
                         </div>
                     </div>
                 </div>
@@ -97,7 +100,7 @@
                     </div>
                     <div class="project-info">
                         <h3>Gestion d'Infrastructure GLPI & Support IT</h3>
-                        <p>Utilisation et administration de GLPI (Gestionnaire Libre de Parc Informatique) pour la gestion du parc IT. Incidents ticketing, gestion des actifs informatiques, génération de rapports. Expérience acquise lors de stage alternance et appliquée en contexte d'apprentissage.</p>
+                        <p>Simulation d'une utilisation et administration de GLPI (Gestionnaire Libre de Parc Informatique) pour la gestion du parc IT. Incidents ticketing, gestion des actifs informatiques, génération de rapports. Expérience acquise lors d'un projet de fin d'année scolaire BTS SIO.</p>
                         <div class="project-tags">
                             <span class="tag">GLPI</span>
                             <span class="tag">IT Service Management</span>
@@ -107,16 +110,16 @@
                 </div>
 
                 <div class="project-card" data-category="python">
-                    <div class="project-image" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">
-                        <i class="fas fa-lock-open"></i>
+                    <div class="project-image" style="background: linear-gradient(135deg, #00d4ff, #0099ff);">
+                        <i class="fas fa-server"></i>
                     </div>
                     <div class="project-info">
-                        <h3>Sensibilisation Sécurité & Awareness Utilisateurs</h3>
-                        <p>Participation à la création et diffusion de contenus de sensibilisation aux risques de sécurité. Gestion du risque utilisateur, phishing awareness, formation aux bonnes pratiques. Contribution à l'amélioration continue de la culture de sécurité au sein de l'organisation.</p>
+                        <h3>Automatisation IIS & Serveurs – Lab PowerShell</h3>
+                        <p>Scripts PowerShell pour automatiser la configuration de serveurs Windows : installation d’IIS, création de site web et mise en place de paramètres réseau de base. Objectif : transformer les tâches manuelles du lab en déploiement reproductible.</p>
                         <div class="project-tags">
-                            <span class="tag">User Awareness</span>
-                            <span class="tag">Sensibilisation</span>
-                            <span class="tag">Sécurité</span>
+                            <span class="tag">PowerShell</span>
+                            <span class="tag">Automation</span>
+                            <span class="tag">Windows Server</span>
                         </div>
                     </div>
                 </div>
@@ -126,15 +129,106 @@
                         <i class="fas fa-laptop"></i>
                     </div>
                     <div class="project-info">
-                        <h3>Sécurité Web & HTML/CSS - Portfolio Personnel</h3>
-                        <p>Développement de ce portfolio en HTML/CSS avec mise en œuvre de bonnes pratiques de sécurité web (OWASP, protection CSRF, CSP). Démonstration des compétences en développement sécurisé et intégration des principes de security by design dans l'architecture frontend.</p>
+                        <h3>Optimisation du routage avec EIGRP</h3>
+                        <p>Configuration du protocole EIGRP dans une infrastructure multi-routeurs avec la répartition de charge. Tests de connectivité entre un site distant et un datacenter.</p>
                         <div class="project-tags">
-                            <span class="tag">HTML/CSS</span>
-                            <span class="tag">Web Security</span>
-                            <span class="tag">OWASP</span>
+                            <span class="tag">EIGRP</span>
+                            <span class="tag">Routage avancé</span>
+                            <span class="tag">ELB</span>
                         </div>
                     </div>
                 </div>
+
+                <div class="project-card" data-category="pentest">
+                    <div class="project-image" style="background: linear-gradient(135deg, #00ff88, #00cc66);">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Routage OSPFv2 multi-zone</h3>
+                        <p>Déploiement d’OSPFv2 avec plusieurs zones (area) et interfaces loopback pour les router-ID. Mise en place d’un plan d’adressage structuré et vérification de la convergence du routage.</p>
+                        <div class="project-tags">
+                            <span class="tag">OSPFv2</span>
+                            <span class="tag">Multi-area</span>
+                            <span class="tag">Routage IP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="pentest">
+                    <div class="project-image" style="background: linear-gradient(135deg, #ff0080, #ff8c00);">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Segmentation réseau avec VLAN & Trunk</h3>
+                        <p>Création de VLANs pour séparer les services (Production, Finance, Gestion) et configuration d’un lien trunk 802.1Q entre commutateurs pour transporter plusieurs VLANs. Vérification de la connectivité entre équipements du même VLAN.</p>
+                        <div class="project-tags">
+                            <span class="tag">VLAN</span>
+                            <span class="tag">Segmentation</span>
+                            <span class="tag">Switching</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="pentest">
+                    <div class="project-image" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Administration centralisée des VLANs avec VTP</h3>
+                        <p>Mise en place du protocole VTP pour propager automatiquement les VLANs sur plusieurs switches (server / client / transparent). Configuration des trunks et vérification de la réplication des VLANs.</p>
+                        <div class="project-tags">
+                            <span class="tag">Administration réseau</span>
+                            <span class="tag">VLAN</span>
+                            <span class="tag">VTP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="pentest">
+                    <div class="project-image" style="background: linear-gradient(135deg, #00ff88, #00cc66);">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Routage Inter-VLAN sur routeur</h3>
+                        <p>Implémentation du routage InterVLAN pour permettre la communication entre plusieurs VLANs (Production, Finance, Direction). Intégration de VTP et de liens trunk pour une architecture cohérente.</p>
+                        <div class="project-tags">
+                            <span class="tag">InterVLAN</span>
+                            <span class="tag">VLAN</span>
+                            <span class="tag">Routage</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="pentest">
+                    <div class="project-image" style="background: linear-gradient(135deg, #00bfff, #1e90ff);">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Redondance avec STP et EtherChannel</h3>
+                        <p>Configuration du Spanning Tree Protocol (STP) pour éviter les boucles et mise en place d’EtherChannel pour agréger plusieurs liens entre switches. Tests de résilience et de continuité de service entre VLAN Étudiants et Professeurs.</p>
+                        <div class="project-tags">
+                            <span class="tag">STP</span>
+                            <span class="tag">EtherChannel</span>
+                            <span class="tag">Haute Disponibilité</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="pentest">
+                    <div class="project-image" style="background: linear-gradient(135deg, #ff0080, #ff8c00);">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Haute disponibilité de passerelle avec DHCP & HSRP</h3>
+                        <p>Déploiement d’un serveur DHCP sur le switch pour distribuer automatiquement les adresses IP, et configuration du protocole HSRP entre deux routeurs pour fournir une passerelle virtuelle redondante. Simulation de panne et bascule automatique de la gateway.</p>
+                        <div class="project-tags">
+                            <span class="tag">DHCP</span>
+                            <span class="tag">HSRP</span>
+                            <span class="tag">H-D</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Pagination -->
@@ -175,7 +269,7 @@
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Contrat d'Apprentissage</h3>
-                    <p>Parcours professionnel en cybersécurité gouvernance</p>
+                    <p>Parcours professionnel Réseaux & Cybersécurité</p>
                     <span class="cert-date">Recherche Active</span>
                 </div>
             </div>
