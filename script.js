@@ -49,13 +49,42 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     const allProjects = document.querySelectorAll('.project-card');
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const paginationButtons = document.querySelectorAll('.pagination-btn');
+    const paginationContainer = document.getElementById('pagination-container');
     
     if (allProjects.length === 0) return;
     
     let currentFilter = 'all';
     let currentPage = 1;
     const projectsPerPage = 3;
+    
+    // Fonction pour générer les boutons de pagination
+    function generatePaginationButtons() {
+        let filteredProjects = Array.from(allProjects).filter(project => {
+            if (currentFilter === 'all') return true;
+            return project.getAttribute('data-category') === currentFilter;
+        });
+        
+        const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+        paginationContainer.innerHTML = '';
+        
+        for (let i = 1; i <= totalPages; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'pagination-btn';
+            if (i === 1) btn.classList.add('active');
+            btn.setAttribute('data-page', i);
+            btn.textContent = i;
+            
+            btn.addEventListener('click', function() {
+                currentPage = i;
+                const allButtons = document.querySelectorAll('.pagination-btn');
+                allButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                updateProjectDisplay();
+            });
+            
+            paginationContainer.appendChild(btn);
+        }
+    }
     
     filterButtons.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -65,22 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             filterButtons.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             
-            paginationButtons.forEach(b => {
-                b.classList.remove('active');
-                if (b.getAttribute('data-page') === '1') {
-                    b.classList.add('active');
-                }
-            });
-            
-            updateProjectDisplay();
-        });
-    });
-    
-    paginationButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            currentPage = parseInt(this.getAttribute('data-page'));
-            paginationButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
+            generatePaginationButtons();
             updateProjectDisplay();
         });
     });
@@ -91,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return project.getAttribute('data-category') === currentFilter;
         });
         
-        const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
         allProjects.forEach(project => project.classList.add('hidden'));
         
         const startIndex = (currentPage - 1) * projectsPerPage;
@@ -99,21 +112,10 @@ document.addEventListener('DOMContentLoaded', function() {
         filteredProjects.slice(startIndex, endIndex).forEach(project => {
             project.classList.remove('hidden');
         });
-        
-        paginationButtons.forEach(btn => {
-            const pageNum = parseInt(btn.getAttribute('data-page'));
-            if (pageNum > totalPages) {
-                btn.style.opacity = '0.5';
-                btn.style.pointerEvents = 'none';
-                btn.style.cursor = 'not-allowed';
-            } else {
-                btn.style.opacity = '1';
-                btn.style.pointerEvents = 'auto';
-                btn.style.cursor = 'pointer';
-            }
-        });
     }
     
+    // Initialisation
+    generatePaginationButtons();
     updateProjectDisplay();
 });
 
